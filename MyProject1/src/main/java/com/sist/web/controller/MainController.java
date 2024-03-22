@@ -36,16 +36,22 @@ public class MainController {
 			{
 				if(cookies[i].getName().startsWith("food"))
 				{
-					if(k>8)
+					if(k>=8)
 						break;
 					String no=cookies[i].getValue();
 					Food r=dao.findByNo(Integer.parseInt(no));
 					fList.add(r);
 					k++;
 				}
+			}
+		}
+		if(cookies!=null)
+		{
+			for(int i=cookies.length-1;i>=0;i--)
+			{
 				if(cookies[i].getName().startsWith("activity"))
 				{
-					if(g>8)
+					if(g>=8)
 						break;
 					String no=cookies[i].getValue();
 					Activity r=adao.findByNo(Integer.parseInt(no));
